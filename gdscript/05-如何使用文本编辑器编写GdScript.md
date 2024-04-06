@@ -42,3 +42,8 @@
 ```text
 godot.exe --headless --script myscript.gd
 ```
+
+### idea运行GdScript
+
+- 在idea中配置shell script
+- 配置环境变量

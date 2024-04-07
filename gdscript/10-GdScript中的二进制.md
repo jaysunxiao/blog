@@ -9,9 +9,10 @@
 
 ### 在GdScript中用二进制运算
 
-![img.png](image/img015.png)
-
 - 演示GdScript的二进制加法
+
+
+![img.png](image/img015.png)
 
 
 -----------

@@ -5,27 +5,17 @@ func _init():
     var b = 0b00000011
     var c = a + b
     print(c)
+    print(int_to_binary_str(c))
     print("Hello World!")
-    binaryNumber(c)
     quit()
 
 
-func binaryNumber(value):
-    var buffer = StreamPeerBuffer.new()
-    buffer.put_64(value);
-    buffer.seek(0)
-    print(buffer.get_8())
-    buffer.seek(1)
-    print(buffer.get_8())
-    buffer.seek(2)
-    print(buffer.get_8())
-    buffer.seek(3)
-    print(buffer.get_8())
-    buffer.seek(4)
-    print(buffer.get_8())
-    buffer.seek(5)
-    print(buffer.get_8())
-    buffer.seek(6)
-    print(buffer.get_8())
-    buffer.seek(7)
-    print(buffer.get_8())
+# 将整数转为二进制字符串
+func int_to_binary_str(number: int) -> String:
+    var binary_str = ""
+
+    for i in range(64):
+        var num = (number >> i) & 0b00000001
+        binary_str = String.num_int64(num) + binary_str
+
+    return binary_str

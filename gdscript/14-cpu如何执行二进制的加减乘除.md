@@ -1,5 +1,7 @@
 ## cpu指令如何执行二进制的加减乘除
 
+- 【神奇的电路，CPU就是靠它计算的！加法器的工作原理】 https://www.bilibili.com/video/BV1hL411G7fe/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
+- 【cpu是如何计算1+1=2的】 https://www.bilibili.com/video/BV1LC4y1Y7j4/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 - 【【硬核科普】带你认识CPU第02期——CPU是怎么计算加法的（上）】 https://www.bilibili.com/video/BV1aQ4y1v7QP/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
 

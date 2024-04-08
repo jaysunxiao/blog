@@ -7,6 +7,8 @@ func _init():
     var b: String = "@GdScript"
     print(b)
 
+    print(a == b)
+
     var c: String = a + b
     print(c)
     print(c[0])

@@ -2,6 +2,8 @@
 
 - 【#编程通识#第十课，什么是计算机数组？】 https://www.bilibili.com/video/BV1R4411G7Xg/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
+- 【什么是数组？ 完整代码动画版，数据结构与算法  考研 期末考试 C和C++版本】 https://www.bilibili.com/video/BV1i64y157m2/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
+
 ![img.png](image/img029.png)
 
 

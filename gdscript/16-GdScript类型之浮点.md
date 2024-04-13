@@ -1,15 +1,14 @@
 ## GdScript类型之浮点
 
-
-### 整数的范围
-
-![img.png](image/img020.png)
-
 - 【PLC与计算机中常用数据类型：浮点数】 https://www.bilibili.com/video/BV12a4y1i7Ak/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
 - 【【计算机知识】定点数与浮点数（2）浮点数法表示方法！】 https://www.bilibili.com/video/BV1Le4y137gU/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
 - 【浮点数的坑很深，但不多】 https://www.bilibili.com/video/BV14V4y1U7rN/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
+
+
+![img.png](image/img020.png)
+
 
 -----------
 > 问：计算机如何表示浮点类型

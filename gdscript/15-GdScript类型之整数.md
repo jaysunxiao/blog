@@ -2,13 +2,15 @@
 
 
 ![img.png](image/img014.png)
-![img.png](image/img017.png)
-
 
 ### 整数的范围
 
 ![img.png](image/img018.png)
 ![img.png](image/img019.png)
+
+![img.png](image/img017.png)
+
+
 
 
 -----------

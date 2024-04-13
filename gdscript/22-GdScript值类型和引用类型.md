@@ -12,6 +12,8 @@
 4. 类（Class）
 
 
+【[Day33]学习C#_值类型和引用类型_两者区别】 https://www.bilibili.com/video/BV14K42187bo/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
+
 
 ![img.png](image/img032.png)
 

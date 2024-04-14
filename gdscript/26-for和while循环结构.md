@@ -1,9 +1,12 @@
 ## for和while循环结构
 
 【什么是循环命令？】 https://www.bilibili.com/video/BV1Q4411T7ZT/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
-【五分钟速学python:循环语句和条件语句的搭配办法】 https://www.bilibili.com/video/BV15E41157B3/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
-【【计算机科学速成课】[40集全/精校] - Crash Course Computer Science】 https://www.bilibili.com/video/BV1EW411u7th/?p=12&share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
+【五分钟速学python:
+循环语句和条件语句的搭配办法】 https://www.bilibili.com/video/BV15E41157B3/?share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
+
+【【计算机科学速成课】[40集全/精校] - Crash Course Computer
+Science】 https://www.bilibili.com/video/BV1EW411u7th/?p=12&share_source=copy_web&vd_source=5dbf211eec08e51a4c6d136972063c73
 
 ![img.png](image/img036.png)
 
@@ -194,7 +197,8 @@ Count is: 3
 Count is: 4
 ```
 
-在这个示例中，首先定义了一个变量`count`并初始化为0。然后使用while循环，当`count`小于5时，执行循环体内的代码。在每次循环中，会打印出当前的`count`值，并将`count`增加1。当`count`增加到5时，循环条件不再满足，循环结束。
+在这个示例中，首先定义了一个变量`count`并初始化为0。然后使用while循环，当`count`
+小于5时，执行循环体内的代码。在每次循环中，会打印出当前的`count`值，并将`count`增加1。当`count`增加到5时，循环条件不再满足，循环结束。
 
 与for循环不同，while循环在执行前不会确定循环的次数，而是在每次循环开始前检查条件是否满足。因此，while循环适用于那些循环次数不确定的情况。
 
@@ -271,7 +275,6 @@ Factorial of 5 is 120
 ```
 
 这个例子使用递归函数来计算阶乘，当n等于0时返回1。然后使用while循环调用该函数并打印结果。
-
 
 ```text
 在教学GdScript中的while循环时，通常会使用一些经典的案例来说明其用法和原理。以下是一些常见的教学案例：

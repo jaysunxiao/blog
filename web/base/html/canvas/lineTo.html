@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> lineTo示意 </title>
+</head>
+<body>
+<h2> lineTo示意 </h2>
+<canvas id="mc" width="420" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	/*
+		该方法负责绘制多角星。
+		n：该参数通常应设为奇数，控制绘制N角星。
+		dx、dy：控制N角星的位置。
+		size：控制N角星的大小
+	*/
+	function createStar(context , n , dx , dy , size)
+	{
+		// 开始创建路径
+		context.beginPath();
+		var dig = Math.PI / n * 4;
+		for(var i = 0; i < n ; i++)
+		{
+			var x = Math.sin(i * dig);
+			var y = Math.cos(i * dig);
+			context.lineTo(x * size + dx ,y * size + dy);
+		}
+		context.closePath();
+	}
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	// 绘制3角星
+	createStar(ctx , 3 , 60 , 60 , 50);
+	ctx.fillStyle = "#f00";
+	ctx.fill();
+	// 绘制5角星
+	createStar(ctx , 5 , 160 , 60 , 50);
+	ctx.fillStyle = "#0f0";
+	ctx.fill();
+	// 绘制7角星
+	createStar(ctx , 7 , 260 , 60 , 50);
+	ctx.fillStyle = "#00f";
+	ctx.fill();
+	// 绘制9角星
+	createStar(ctx , 9 , 360 , 60 , 50);
+	ctx.fillStyle = "#f0f";
+	ctx.fill();
+</script>
+</body>
+</html>

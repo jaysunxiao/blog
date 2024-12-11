@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体相关属性设置</title>
+</head>
+<style type="text/css">
+    @font-face {
+        font-family: fontName;
+        src: local("FontA.otf"), url("Blazed.ttf");
+    }
+
+    /* 定义服务器字体：fontName。该字体优先使用客户端字体：FontA.otf，当客户端字体不存在时，使用Blazed.ttf作为替代字体。*/
+    div {
+        font-family: fontName;
+    }
+</style>
+<body>
+<!--****************************************************************************************************************-->
+<span style="cursor: nesw-resize">cursor规定指向某元素时的指针</span>
+<hr/>
+<!--****************************************************************************************************************-->
+<span style="color:#888888">测试文字的颜色</span>
+<hr/>
+
+<span style="color:red">测试文字的颜色</span>
+<hr/>
+
+<!--****************************************************************************************************************-->
+<span style="font-family: '楷体_GB2312'">设置文字的字体</span>
+<hr/>
+
+<span style="font-size:20pt">该属性用于设置文字的字体大小，此处的字体大小既可以是相对的字体大小，也可以是绝对的字体大小</span>
+<hr/>
+
+<span style="font-size:xx-large">xx-small：最小字体；x-small，small，medium，large，x-large，xx-large，larger，length：直接设置字体大小</span>
+<hr/>
+
+<span style="font-style:italic">属性用于设置文字风格，是否采用斜体等。该属性的常用属性值有normal、italic、oblique，这些属性值依次表示设置文字正常、斜体、倾斜字体</span>
+<hr/>
+
+<span style="font-weight:bold">该属性用于设置字体是否加粗。该属性的值表示加粗的程度，加粗的程度用lighter、normal、bold、bolder等常用属性值表示，即更细、正常、加粗、更粗。还可以使用具体的数值，用100、200、300、…、900来控制字体的加粗程度。</span>
+<hr/>
+
+<span style="font-weight:900">测试文字</span>
+<hr/>
+
+<!--****************************************************************************************************************-->
+<!--text-wrap：不会把英文拆开-->
+<span style="text-wrap: normal;width: 50px;">hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world </span>
+<hr/>
+
+<div style="text-indent:100px">测试文字，首行缩进</div>
+<hr/>
+
+<div style="text-align:center">测试文字，居中对齐</div>
+<hr/>
+
+<span style="text-shadow:5px 5px 2px gray">测试文字，阴影向x距离，阴影向y距离，模糊的程度，颜色</span>
+<hr/>
+
+<span style="text-decoration: blink;">该属性用于控制文字是否有修饰线，如下画线等。该属性的值有none、blink、underline、line-through和overline，分别对应的修饰效果为无修饰、闪烁、下画线、中画线和上画线等。</span>
+<hr/>
+
+<span style="text-decoration:underline">测试文字</span>
+<hr/>
+
+<span style="text-decoration:line-through">测试文字</span>
+<hr/>
+
+<span style="font-variant:small-caps">属性用于设置文字的大写字母的格式。该属性支持normal、small-caps两个属性值，分别对应于正常的字体、小型的大写字母字体。</span>
+<hr/>
+
+<span style="text-transform:uppercase">hello该属性用于设置文字的大小写。该属性的值可以是none、capitalize、uppercase和lowercase，分别代表不转换、首字母大写、全部大写和全部小写。</span>
+<hr/>
+
+<span style="text-transform:capitalize">hello</span>
+<hr/>
+
+<!--****************************************************************************************************************-->
+<span style="line-height:30pt">该属性用于设置字体的行高，即字体最底端与字体内部顶端之间的距离。为负值的行高可用来实现阴影效果</span>
+<hr/>
+
+<span style="letter-spacing:5pt">该属性用于设置字符之间的间隔。该属性将指定的间隔添加到每个字符之后，但最后一个文字不会受该属性的影响。该属性支持normal和数值+长度单位（如11pt、14px等）两种属性值</span>
+<hr/>
+
+<span style="letter-spacing:15pt">hello world</span>
+<hr/>
+
+<span style="word-spacing:20pt">hello world该属性用于设置单词之间的间隔。该属性支持normal和数值+长度单位（如11pt、14px等）两种属性值</span>
+<hr/>
+
+<span style="word-spacing:60pt">hello world</span>
+<hr/>
+
+<div style="word-wrap:normal;">word-wrap：用于设置目标组件中文本内容的换行方式。该属性支持如下两个值。 normal：靠浏览器的默认规则进行换行。 break-word：设置允许在单词中间换行。Our
+    domain is http://www.crazyit.org
+</div>
+<br/><br/>
+<hr/>
+
+<!--****************************************************************************************************************-->
+<div style="white-space:nowrap">强制不换行，直到遇到br标签；强制不换行，直到遇到br标签；强制不换行，直到遇到br标签</div>
+<hr/>
+
+<div style="overflow:hidden;white-space:nowrap;text-overflow:clip;height: 30px;width: 200px;">
+    当文字溢出时，只是简单地裁切，□　clip：如果该元素指定了overflow:hidden属性值，当该元素中文本溢出时，clip指定只是简单地裁切溢出的文本。
+    □　ellipsis：如果该元素指定了overflow:hidden属性值，当该元素中文本溢出时，ellipsis指定裁切溢出的文本，并显示溢出标记（...）。
+</div>
+<hr/>
+
+<div style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height: 30px;width: 200px;">
+    当文字溢出时，裁切之后显示裁切标记，□　normal：这是默认的处理方式。文本自动处理换行。假如抵达容器边界会转到下一行。
+</div>
+
+</body>
+</html>

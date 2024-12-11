@@ -1,0 +1,64 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.top {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.topContent {
+    width: 75%;
+    height: 50px;
+    /*上下0px，左右auto*/
+    margin: 0px auto;
+    background: blue;
+}
+
+.body {
+    width: 75%;
+    height: 1500px;
+
+    /*padding-top,padding-bottom,padding-left,padding-right*/
+    padding: 20px;
+
+    /*border-top,border-bottom,border-left,border-right*/
+    /*破折号*/
+    border-style: dashed;
+    /*border-top-width,border-bottom-width,border-left-width,border-right-width*/
+    border-width: 10px;
+    /*border-top-color,border-bottom-color,border-left-color,border-right-color*/
+    border-color: red;
+    /*圆角边框*/
+    border-radius: 10px;
+    /*盒子的阴影，x，y，模糊程度，颜色*/
+    box-shadow: 5px 5px 5px sienna;
+
+    /*边框和内边距是否计入长宽*/
+    /*box-sizing: border-box;*/
+
+    /*外边距会合并*/
+    /*margin-top,margin-bottom,margin-left,margin-right*/
+    margin: 20px auto;
+
+    background-color: green;
+
+    /*border-box背景包含边框以内（默认）；padding-box背景包含padding以内，不包含边框；content-box背景只包含content*/
+    background-clip: padding-box;
+    /*图片从哪里开始绘制*/
+    /*background-origin: padding-box;*/
+}
+
+.bodyImg {
+    width: 100%;
+    height: 400px;
+    background-color: tomato;
+}
+
+.bodyContent {
+    width: 100%;
+    height: 400px;
+    background-color: lightblue;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 图片高亮 </title>
+</head>
+<body>
+<h2> 图片高亮 </h2>
+<canvas id="mc" width="400" height="260"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	var image = new Image();
+	image.src = "android.png";
+	image.onload = function()
+	{
+		// 绘制原始图片
+		ctx.drawImage(image , 30 , 20);
+		// 用带高亮参数的方法绘制图片
+		lightImage(image , 220  , 20 , 1.6);
+	}
+	var lightImage = function(image , x  , y , light)
+	{
+		// 绘制图片
+		ctx.drawImage(image , x , y);
+		// 获取从x、y开始，宽为image.width、高为image.height的图片数据
+		// 也就是获取绘制的图片数据
+		var imgData = ctx.getImageData(x , y , image.width , image.height);
+		for (var i = 0 , len = imgData.data.length ; i < len ; i += 4 )
+		{
+			// 改变每个像素的R、G、B值
+			imgData.data[i + 0] = imgData.data[i + 0] * light;
+			imgData.data[i + 1] = imgData.data[i + 1] * light;
+			imgData.data[i + 2] = imgData.data[i + 2] * light;
+		}
+		// 将获取的图片数据放回去。
+		ctx.putImageData(imgData , x , y);
+	}
+</script>
+</body>
+</html>

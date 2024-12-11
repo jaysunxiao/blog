@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 视频播放 </title>
+</head>
+<body>
+<h2> 视频播放 </h2>
+<video id="mv" src="movie.webm" loop>
+    您的浏览器不支持video元素
+</video>
+
+<br/>
+
+<input id="bn" type="button" value="播放"/><span id="detail"></span>秒
+<script type="text/javascript">
+	var bn = document.getElementById("bn");
+	var mv = document.getElementById("mv");
+	var detail = document.getElementById("detail");
+	// 为video元素的ontimeupdate事件绑定监听器
+	mv.ontimeupdate = function()
+	{
+		detail.innerHTML = mv.currentTime + "/"
+			+ mv.duration;
+	};
+	bn.onclick = function()
+	{
+		if(mv.paused)
+		{
+			mv.play();
+			bn.value = "暂停";
+		}
+		else
+		{
+			mv.pause();
+			bn.value = "播放";
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+</head>
+<body>
+
+<span id="tm"></span>
+<hr/>
+
+<script type="text/javascript">
+    // window对象是整个JavaScript脚本运行的顶层对象。
+    // 在定义了一个所谓的全局变量后，它仅仅在当前的window对象中具有全局性。
+    // 如果在同一个页面里有多个Frame，则意味着有多个window对象，且每个window中的全局对象不会互相影响。
+
+    // *****************************************************************************************************************
+    // 在定义一个全局变量时，该变量是作为window对象的一个属性存在的。
+    var a = 5;
+    // 判断window对象的属性a和全局变量a是否相等
+    document.writeln((window.a === a) + "<br />");// 返回true
+
+    document.writeln("<hr />");
+
+    // *****************************************************************************************************************
+    // window对象还包含一个location属性，该属性可用于访问该窗口或Frame所装载文档的地址。
+    var loc = window.location;
+    var locStr = "当前的location信息是:<br />";
+    // 遍历location对象的全部属性
+    for (var propname in loc) {
+        locStr += propname + ": " + loc[propname] + "<br />";
+    }
+    document.writeln(locStr + "<br />");
+    document.writeln("<hr />");
+
+
+    // *****************************************************************************************************************
+    var str = "当前的屏幕信息是:<br />";
+    // 遍历screen对象的所有属性
+    for (var propname in window.screen) {
+        str += propname + ": " + window.screen[propname] + "<br />";
+    }
+    document.writeln(str + "<br />");
+    document.writeln("<hr />");
+
+    // *****************************************************************************************************************
+    // setInterval("code" , interval)、clearInterval (timer)：设置、删除定时器。setInterval设置每隔interval毫秒重复执行一次code。
+    // setTimeout("code" , interval)、clearTimeout(timer)：也是设置定时器。setTimeout设置在interval毫秒延迟后执行一次code。
+    // 定义定时器变量
+    var timer;
+    var cur = new Date().getTime();
+    var setTime = function () {
+        // 在tm元素中显示当前时间
+        document.getElementById("tm").innerHTML = new Date().toLocaleString();
+        // 如果当前时间比起始时间大于5秒，停止定时器的调度
+        if (new Date().getTime() - cur > 5 * 1000) {
+            // 清除timer定时器
+            clearInterval(timer);
+        }
+    }
+    // 指定每隔1000毫秒执行setTime()函数一次
+    timer = setInterval(setTime, 1000);
+
+</script>
+
+</body>
+</html>

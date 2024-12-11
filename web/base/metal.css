@@ -1,0 +1,104 @@
+/* 元素选择器：设置整个表格的背景色 */
+table {
+    background-color: #003366;
+    width: 400px;
+}
+
+/* id选择器：对id为xx的元素起作用的CSS样式 */
+#xx {
+    border: 2px dotted black;
+    background-color: #888;
+}
+
+/* 派生选择器：对id为xx的元素中的p元素起作用的CSS样式 */
+#xx p {
+    border: 2px dotted black;
+    background-color: #888;
+}
+
+/* 类选择器：对所有class为myclass的元素都起作用的CSS样式 */
+.myclass {
+    width: 240px;
+    height: 40px;
+    background-color: #dddddd;
+}
+
+/* 对class为myclass的div元素起作用的CSS样式 */
+div.myclass {
+    border: 2px dotted black;
+    background-color: #888888;
+}
+
+/* 属性择器：对所有title属性为te的元素都起作用的CSS样式 */
+[href="www.baidu.com"] {
+    background-color: #dddddd;
+}
+
+/*指定该CSS样式对所有包含attr属性，且attr属性的值为以空格隔开的系列值，其中某个值为baidu的元素起作用*/
+[href~="baidu"] {
+    background-color: #dddddd;
+}
+
+/*指定该CSS样式对所有包含attr属性，且attr属性的值为包含baidu的字符串的元素起作用*/
+[href*="baidu"] {
+    background-color: #dddddd;
+}
+
+/*指定该CSS样式对所有包含attr属性，且attr属性的值为以baidu开头的字符串的元素起作用*/
+[href^="baidu"] {
+    background-color: #dddddd;
+}
+
+/*指定该CSS样式对所有包含attr属性，且attr属性的值为以baidu结尾的字符串的元素起作用*/
+[href$="baidu"] {
+    background-color: #dddddd;
+}
+
+/*后代选择器：p中的strong标签*/
+p strong {
+    background-color: #dddddd;
+}
+
+/*后代选择器：p中的所有标签标签，除了h1*/
+p *:not(h1) {
+    background-color: #dddddd;
+}
+
+/*子代选择器：p里的第一个strong标签*/
+p > strong {
+    background-color: #dddddd;
+}
+
+/* 兄弟选择器：可选择紧接在一个元素后的元素，且两者具有相同的父元素 */
+li + li {
+    background-color: red;
+}
+
+/*状态选择器：当鼠标在li上起作用，active，focus，disabled，read-only，checked，default，indeterminate，selection，invalid，valid*/
+li:hover {
+    background-color: cyan;
+}
+
+/* 组合选择器：div元素、class属性为a的元素、id为abc的元素都起作用的CSS样式 */
+div, .a, #abc {
+    width: 200px;
+    height: 35px;
+    border: 2px dotted black;
+    background-color: #888;
+}
+
+/*伪元素选择器:对p元素的第一行起作用，first-letter第一个字符，first-child第一个标签，last-child最后一个标签，
+nth-child(3)第三个标签*/
+P:first-line {
+}
+
+/*伪元素选择器:在li元素前插入content，并且指定字体的大小*/
+li:before {
+    content: "before";
+    font-size: 10px;
+}
+
+/*target选择器：页面可通过该选择器高亮显示正在被访问的目标*/
+:target {
+    background-color: aquamarine;
+}

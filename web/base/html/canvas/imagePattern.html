@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 位图填充 </title>
+</head>
+<body>
+<h2> 位图填充 </h2>
+<canvas id="mc" width="400" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	ctx.save();
+	ctx.translate(30 , 20);
+	var image = new Image();
+	image.src = "android.png";
+	image.onload = function()
+	{
+		// 创建位图填充
+		imgPattern = ctx.createPattern(image, "repeat");
+		// 设置使用位图填充作为填充颜色
+		ctx.fillStyle = imgPattern;
+		// 填充一个矩形
+		ctx.fillRect(0 , 0 , 160 , 80);
+		// 恢复坐标系统
+		ctx.restore();
+		// 平移坐标系统
+		ctx.translate(280 , 160)
+		ctx.beginPath();
+		// 添加圆弧
+		ctx.arc(0 , 0  , 80 , 0 , Math.PI * 2 , true);
+		ctx.closePath();
+		ctx.lineWidth = 12;
+		// 设置使用位图填充作为边框颜色
+		ctx.strokeStyle = imgPattern;
+		ctx.stroke();
+	}
+</script>
+</body>
+</html>

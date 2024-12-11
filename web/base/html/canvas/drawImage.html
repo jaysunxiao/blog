@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 绘制位图 </title>
+</head>
+<body>
+<h2> 绘制位图 </h2>
+<canvas id="mc" width="420" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	// 创建Image对象
+	var image = new Image();
+	// 指定Image对象装载图片
+	image.src = "android.png";
+	// 当图片装载完成时激发该函数
+	image.onload = function()
+	{
+		// 保持原大小绘制图片
+		ctx.drawImage(image , 20 , 10);
+		// 绘制图片时进行缩放
+		ctx.drawImage(image , 180 , 10 , 76 , 110);
+		var sd = 50;
+		var sh = 65
+		// 从源位图中挖取一块、放大3倍后绘制在Canvas上
+		ctx.drawImage(image , 2 , 50  , sd  ,  sh
+			, 265 , 10 , sd * 3 , sh * 3);
+	}
+</script>
+</body>
+</html>

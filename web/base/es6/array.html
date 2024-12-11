@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array</title>
+</head>
+<body>
+<script>
+    // concat()	连接两个或更多的数组，并返回结果。
+    // join()把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+    // pop()删除并返回数组的最后一个元素
+    // push()向数组的末尾添加一个或更多元素，并返回新的长度。
+    // reverse()颠倒数组中元素的顺序。
+    // shift()删除并返回数组的第一个元素
+    // slice()从某个已有的数组返回选定的元素
+    // sort()对数组的元素进行排序
+
+    // 复制数组，浅克隆
+    const a1 = [1, 2];
+    const a2 = a1.concat();
+
+
+    //扩展运算符提供了复制数组的简便写法。
+    // 写法一
+    // const a2 = [...a1];
+    // 写法二
+    // const [...a2] = a1;
+
+
+    // 合并数组
+    const arr1 = ['a', 'b'];
+    const arr2 = ['c'];
+    const arr3 = ['d', 'e'];
+    // ES5 的合并数组
+    arr1.concat(arr2, arr3); // [ 'a', 'b', 'c', 'd', 'e' ]
+
+    // ES6 的合并数组
+    const arry4 = [...arr1, ...arr2, ...arr3]; // [ 'a', 'b', 'c', 'd', 'e' ]
+
+    // Array.from转为真正的数组
+    let namesSet = new Set(['a', 'b']);
+    let arry5 = Array.from(namesSet); // ['a', 'b']
+
+    // Array.of()方法用于将一组值，转换为数组
+    let arry6 = Array.of(3, 11, 8); // [3,11,8]
+    let arry7 = Array.of(3); // [3]
+
+
+    //  find() 和 findIndex()用于找出第一个符合条件的数组成员
+    let tmp1 = [1, 4, -5, 10].find((n) => n < 0);// -5
+    // findIndex方法返回第一个符合条件的数组成员的位置
+    let tmp2 = [1, 5, 10, 15].findIndex(function (value, index, arr) {
+        // find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组
+        return value > 9;
+    }); // 2
+
+
+    // fill方法使用给定值，填充一个数组
+    let tmp3 = new Array(3).fill(7); // [7, 7, 7]
+
+
+    // flat()用于将嵌套的数组“拉平”，变成一维的数组。可以将flat()方法的参数写成一个整数，表示想要拉平的层数，默认为1
+    let arr8 = [1, 2, [3, [4, 5]]].flat();// [1, 2, 3, [4, 5]]
+    let arr9 = [1, 2, [3, [4, 5]]].flat(2);// [1, 2, 3, 4, 5]
+</script>
+</body>
+</html>

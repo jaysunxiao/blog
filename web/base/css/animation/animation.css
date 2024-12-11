@@ -1,0 +1,131 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #003366;
+
+    color: #00FF00;
+}
+
+#div1 {
+    /*平移，+x，+y*/
+    transform: translate(50px, 50px);
+    /*!*safari chrome*!*/
+    /*-webkit-transform: translate(200px, 100px);*/
+    /*!*IE*!*/
+    /*-ms-transform: translate(200px, 100px);*/
+    /*!*opera*!*/
+    /*-o-transform: translate(200px, 100px);*/
+    /*!*Firefox*!*/
+    /*-moz-transform: translate(200px, 100px);*/
+}
+
+#div2 {
+    /*旋转，顺时针*/
+    transform: rotate(200deg);
+    /*!*safari chrome*!*/
+    /*-webkit-transform: rotate(200deg);*/
+    /*!*IE*!*/
+    /*-ms-transform: rotate(200deg);*/
+    /*!*opera*!*/
+    /*-o-transform: rotate(200deg);*/
+    /*!*Firefox*!*/
+    /*-moz-transform: rotate(200deg);*/
+}
+
+#div3 {
+    /*width,height*/
+    transform: scale(2, 0.5);
+    /*!*safari chrome*!*/
+    /*-webkit-transform: scale(2, 0.5);*/
+    /*!*IE*!*/
+    /*-ms-transform: scale(2, 0.5);*/
+    /*!*opera*!*/
+    /*-o-transform: scale(2, 0.5);*/
+    /*!*Firefox*!*/
+    /*-moz-transform: scale(2, 0.5);*/
+}
+
+#div4 {
+    /*围绕x轴和y轴旋转的角度*/
+    transform: skew(50deg, 50deg);
+    /*!*safari chrome*!*/
+    /*-webkit-transform: skew(50deg, 50deg);*/
+    /*!*IE*!*/
+    /*-ms-transform: skew(50deg, 50deg);*/
+    /*!*opera*!*/
+    /*-o-transform: skew(50deg, 50deg);*/
+    /*!*Firefox*!*/
+    /*-moz-transform: skew(50deg, 50deg);*/
+}
+
+
+/*************************************************************************************************************/
+#div5 {
+    transition: width 2s, height 2s, transform 2s;
+    /*过渡效果延迟播放时间*/
+    transition-delay: 1s;
+    /*过度效果的时间曲线*/
+    transition-timing-function: linear;
+}
+
+/*鼠标在上方盘旋*/
+#div5:hover {
+    width: 200px;
+    height: 200px;
+    transform: rotate(360deg);
+    /*-webkit-transform: rotate(360deg);*/
+    /*-ms-transform: rotate(360deg);*/
+    /*-o-transform: rotate(360deg);*/
+    /*-moz-transform: rotate(360deg);*/
+}
+
+/*************************************************************************************************************/
+#div6 {
+    /*不占位的布局*/
+    position: relative;
+    animation: anim 5s infinite alternate;
+}
+
+@keyframes anim {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: green;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: black;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: yellow;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: #00FF00;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/*************************************************************************************************************/
+#div7 {
+    width: auto;
+    height: auto;
+    /*分多少列*/
+    column-count: 3;
+    /*列之间的间隔*/
+    column-gap: 30px;
+    /*分列线的颜色*/
+    column-rule: 5px outset green;
+}

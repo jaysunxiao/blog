@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+</head>
+<body>
+<script type="text/javascript">
+    var a = 1;
+
+
+    // if
+    if (a > 1) {
+        document.writeln(">");
+    } else if (a < 1) {
+        document.writeln("<");
+    } else {
+        document.writeln("==")
+    }
+    document.writeln("<hr/>");
+
+
+    // switch
+    switch (a) {
+        case 1:
+            document.writeln("1");
+            break;
+        case 2:
+            document.writeln("2");
+            break;
+        default:
+            document.writeln("default");
+    }
+    document.writeln("<hr/>");
+
+
+    // for
+    var b = [0, 1, 2, 3];
+    for (var i = 0; i < b.length; i++) {
+        document.writeln(b[i]);
+    }
+    document.writeln("<hr/>");
+
+
+    // for-in
+    for (var temp in b) {
+        document.writeln(temp);
+    }
+    document.writeln("<hr/>");
+
+
+    // while,do while
+    var c = 0;
+    while (true) {
+        document.writeln(c);
+        c++;
+        if (c < 10) {
+            continue;
+        }
+
+        if (c > 10) {
+            break;
+        }
+    }
+</script>
+</body>
+</html>

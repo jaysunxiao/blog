@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Storage示例 </title>
+</head>
+<body>
+
+<input id="input" type="text"/>
+
+<!-- 定义是否用Local Storage保存的数据的复选框 -->
+<div>
+    <label>使用Local Storage保存：</label>
+    <input type="checkbox" id="local"/>
+</div>
+
+<input id="saveButton" type="button" value="保存数据"/>
+
+<input id="loadButton" type="button" value="读取数据"/>
+
+<div id="show"></div>
+
+<script type="text/javascript">
+    // Session Storage：Session Storage保存的数据生存期限与用户Session期限相同，用户Session结束时，Session Storage保存的数据也就丢失了。
+    // 用户Session期限指的是从用户第一次访问某网站开始，到用户关闭浏览器、离开该网站的这段时间。
+
+    // Local Storage：保存在用户磁盘的Web Storage。
+    // 通过Local Storage保存的数据生存期限很长，除非用户或程序显式地清除这些数据，否则这些数据将会一直存在。
+
+    // length：该属性返回该Storage里保存了多少组key-value对。
+    // key(index)：该方法返回该Storage中第index个key。
+    // getItem(key)：该方法返回该Storage中指定key对应的value。
+    // set(key, value)：该方法用于向该Storage存入指定的key-value对。
+    // removeItem(key)：该方法用于从该Storage删除指定key对应的key- value对。
+    // T clear()：该方法用于删除该Storage中所有的key-value对
+    var saveStorage = function () {
+        // 如果勾选了复选框，使用Local Storage保存数据，否则使用Session Storage保存数据
+        var checked = document.getElementById("local").checked;
+        var storage = checked ? localStorage : sessionStorage;
+
+        var content = document.getElementById("input").value;
+        storage.setItem("message", content);
+    }
+
+    var loadStorage = function () {
+        // 如果勾选了复选框，使用Local Storage保存数据，否则使用Session Storage保存数据
+        var checked = document.getElementById("local").checked;
+        var storage = checked ? localStorage : sessionStorage;
+
+        var target = document.getElementById("show");
+        // 读取数据
+        target.innerHTML = storage.getItem("message");
+    }
+
+    var saveButton = document.getElementById("saveButton");
+    var loadButton = document.getElementById("loadButton");
+    saveButton.addEventListener("click", saveStorage);
+    loadButton.addEventListener("click", loadStorage);
+</script>
+</body>
+</html>

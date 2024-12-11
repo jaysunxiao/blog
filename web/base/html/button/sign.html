@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 通过属性进行校验 </title>
+</head>
+<body>
+<form action="http://www.baidu.com" method="get">
+    <p>
+        <label for="email">邮箱：</label>
+        <input id="email" name="email" type="text" required pattern="\d{3}"/>
+    </p>
+    <p>
+        <label for="password">密码框：</label>
+        <input id="password" name="password" type="password" required/>
+    </p>
+    <input id='ok' type="submit" value="登录百度首页"/>
+</form>
+
+<hr/>
+<script type="text/javascript">
+</script>
+</body>
+</html>

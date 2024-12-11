@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+<script>
+    // ES6为字符串添加了遍历器接口，使得字符串可以被for...of循环遍历。
+    // 除了遍历字符串，这个遍历器最大的优点是可以识别大于0xFFFF的码点，传统的for循环无法识别这样的码点。
+    for (let codePoint of 'foo') {
+        console.log(codePoint);
+        // "f"
+        // "o"
+        // "o"
+    }
+
+
+    // includes()：返回布尔值，表示是否找到了参数字符串。
+    // startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+    // endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。
+    let s = 'Hello world!';
+    s.startsWith('Hello'); // true
+    s.endsWith('!'); // true
+    s.includes('o'); // true
+
+    // 这三个方法都支持第二个参数，表示开始搜索的位置。
+    let s1 = 'Hello world!';
+
+    s1.startsWith('world', 6); // true
+    s1.endsWith('Hello', 5); // true
+    s1.includes('Hello', 6); // false
+
+
+    // repeat方法返回一个新字符串，表示将原字符串重复n次。
+    'x'.repeat(3); // "xxx"
+
+
+    // padStart()用于头部补全，padEnd()用于尾部补全。如果某个字符串不够指定长度，会在头部或尾部补全。
+    'x'.padStart(5, 'ab'); // 'ababx'
+    'x'.padStart(4, 'ab'); // 'abax'
+
+    'x'.padEnd(5, 'ab'); // 'xabab'
+    'x'.padEnd(4, 'ab'); // 'xaba'
+
+    // matchAll方法返回一个正则表达式在当前字符串的所有匹配。
+
+    // 模板字符串中嵌入变量
+    let name = "Bob", time = "today";
+    let s2 = `Hello ${name}, how are you ${time}?`;
+    console.log(s2);
+
+
+    // 正则表达式
+    // i : 表示区分大小写字母匹配。
+　　 // m ：表示多行匹配。
+　　 // g : 表示全局匹配。
+    let regex = new RegExp('xyz', 'i'); // 等价于：var regex = /xyz/i;
+
+    // test 方法用于测试正则规则在指定的字符串中是否具有符合的匹配结果，如果匹配到则返回true，否则返回false。示例:
+    console.log(regex.test('XYZaaa')); // => true
+    console.log(regex.test('edcba')); // => false
+    console.log('xyzbbbXYZ'.match(/xyz/i)); // => ['xyz']
+    console.log('xyzbbbXYZ'.match(/xyz/ig)); // => ['xyz','XYZ']
+</script>
+</body>
+</html>

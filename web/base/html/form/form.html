@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 表单 </title>
+</head>
+<body>
+<!-- GET方式的请求：GET方式的请求会将请求参数的名和值转换成字符串，并附加在原URL之后，
+    因此可以在地址栏中看到请求参数名和值。且GET请求传送的数据量较小，一般不能大于2KB-->
+<!-- POST方式的请求：POST方式传送的数据量较大，通常认为POST请求参数的大小不受限制，但往往取决于服务器的限制，
+POST请求传输的数据量总比GET传输的数据量大。而且POST方式发送的请求参数以及对应的值放在HTML HEADER中传输，
+    用户不能在地址栏里看到请求参数值，安全性相对较高。-->
+
+<!--<textarea>,<input>例外，因为它是一个表单控件，它的开始标签和结束标签之间的内容是它的值，因此只能通过value属性来访问。-->
+<form id="form1" name="form1" action="http://www.baidu.com" method="get" target="_blank">
+    <p name="elementName">
+        <span>单行文本框：</span>
+        <input id="username" name="username" type="text" required="required" pattern="\d{3}"/>
+    </p>
+    <p>
+        <span>价格：</span>
+        <input name="price" type="number" min="20" max="150" step="5"/>
+    </p>
+    <p>
+        <span> 不能编辑的文本框：</span>
+        <input id="username1" name="username1" type="text" readonly="readonly"/>
+    </p>
+    <p>
+        <span> 密码框：</span>
+        <input id="password" name="password" type="password"/>
+    </p>
+    <p>
+        <span>隐藏域：</span>
+        <input id="hidden" name="hidden" type="hidden"/>
+    </p>
+    <p>
+        <span> 第一组单选框：</span>
+        <input id="color" name="color" type="radio" value="red"/>
+        <input id="color2" name="color" type="radio" value="green"/>
+        <input id="color3" name="color" type="radio" value="blue"/>
+    </p>
+    <p>
+        <span>第二组单选框：</span>
+        <input id="gender" name="gender" type="radio" value="male"/>
+        <input id="gender2" name="gender" type="radio" value="female"/>
+    </p>
+    <p>
+        <span>两个复选框：</span>
+        <input id="website" name="website" type="checkbox" value="leegang.org"/>
+        <input id="website2" name="website" type="checkbox" value="crazyit.org"/>
+    </p>
+    <p>
+        <span>文件上传域：</span>
+        <input id="file" name="file" type="file"/>
+    </p>
+    <p>
+        <span>图像域：</span>
+        <input type="image" src="../button/wjc.gif" alt="疯狂Java联盟"/>
+    </p>
+    <p>
+        <span>下面是四个按钮：</span>
+        <input id="ok" name="ok" type="submit" value="提交"/>
+        <input id="dis" name="dis" type="submit" value="提交" disabled="disabled"/>
+        <input id="cancel" name="cancel" type="reset" value="重填"/>
+        <input id="no" name="no" type="button" value="无动作"/>
+    </p>
+</form>
+
+<hr/>
+
+<!-- 元素到底是生成列表框，还是生成下拉菜单，完全由是否指定了size或multiple属性来决定，
+    只要为<select .../>元素指定了这两个属性之一，浏览器就会生成列表框，否则就是下拉菜单-->
+<form action="http://www.baidu.com" method="post">
+    <div>下面是简单下拉菜单：</div>
+    <select id="skills" name="skills">
+        <option value="java">Java语言</option>
+        <option value="c">C语言</option>
+        <option value="ruby">Ruby语言</option>
+    </select>
+    <div>下面是允许多选的列表框：</div>
+    <select id="books" name="books" multiple="multiple" size="4">
+        <option value="java">Java语言</option>
+        <option value="c">C语言</option>
+        <option value="ruby">Ruby语言</option>
+    </select>
+    <div>下面是允许多选的列表框：</div>
+    <select id="leegang" name="leegang" multiple="multiple" size="6">
+        <optgroup label="疯狂Java体系图书">
+            <option value="java" label="aaaaaaaa">疯狂Java讲义</option>
+            <option value="android">疯狂Android讲义</option>
+            <option value="ee">轻量级Java EE企业应用实战</option>
+        </optgroup>
+        <optgroup label="其他图书">
+            <option value="struts">Struts 2.1权威指南</option>
+            <option value="ror">RoR敏捷开发最佳实践</option>
+        </optgroup>
+    </select>
+    <br/>
+    <button type="submit"><b>提交</b></button>
+</form>
+
+<hr/>
+
+<form action="http://www.baidu.com" method="post">
+    <div>简单多行文本域：</div>
+    <div><textarea cols="20" rows="2"></textarea></div>
+    <div>只读的多行文本域：</div>
+    <div><textarea cols="28" rows="4" readonly="readonly">疯狂Java讲义</textarea></div>
+    <button type="submit"><b>提交</b></button>
+    <br/>
+</form>
+
+<hr/>
+
+<form action="do">
+    <p>
+        type="color"的文本框:<br/><input name="color" type="color"/>
+    <p>
+        type="date"的文本框:<br/><input name="date" type="date"/>
+    <p>
+        type="time"的文本框:<br/><input name="time" type="time"/>
+    <p>
+        type="datetime"的文本框:<br/><input name="datetime" type="datetime"/>
+    <p>
+        type="datetime-local"的文本框:<br/><input name="datetime-local" type="datetime-local"/>
+    <p>
+        type="month"的文本框:<br/><input name="month" type="month"/>
+    <p>
+        type="time"的文本框:<br/><input name="time" type="time"/>
+    <p>
+        type="week"的文本框:<br/><input name="week" type="week"/>
+    <p>
+        type="email"的文本框:<br/><input name="email" type="email" multiple/>
+    <p>
+        type="tel"的文本框:<br/><input name="tel" type="tel"/>
+    <p>
+        type="url"的文本框:<br/><input name="url" type="url"/>
+    <p>
+        type="number"的文本框:<br/><input name="number" type="number"/>
+    <p>
+        type="range"的文本框:<br/><input name="range" type="range" min="0" max="100" step="50"/>
+    <p>
+        type="search"的文本框:<br/><input name="search" type="search"/>
+    <p>
+        <input value="提交" type="submit"/>
+</form>
+
+<hr/>
+
+<script type="text/javascript">
+    // 访问表单控件
+    var a = document.getElementById("form1").elements[0].value;// elements[index]：返回表单中第index个表单控件
+    var b = document.getElementById("form1").elements["elementName"];// elements['elementName']：返回表单中id或name为elementName的表单控件，HTMLCollection
+    var c = document.getElementById("form1").elementName;// formObj.elementName：返回表单中id或name为elementName的表单控件。
+    document.writeln(a);
+    document.writeln(b);
+    document.writeln(c);
+
+    // 访问列表框
+    // 返回列表框、下拉菜单里所有选项组成的数组。只读属性。
+    var d = document.getElementById("skills").options[0];
+    // 返回下拉列表中选中选项的索引，如果有多个选项被选中，则只返回第一个被选中选项的索引。读写属性。
+    var e = document.getElementById("skills").selectedIndex;
+    document.writeln(d);
+    document.writeln(e);
+
+    // 为列表框、下拉菜单添加选项
+    var op = document.createElement("option");
+    op.innerHTML = "新增的选项";
+    document.getElementById("skills").add(op, null);
+</script>
+</body>
+</html>

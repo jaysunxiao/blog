@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+
+<!-- <div contentEditable="true" >直接指定contentEditable="true"表明该元素是可编辑的 -->
+<table id="tableId" style="width:400px" border="1">
+    <caption><b>这是表格的标题</b></caption>
+    <thead>
+    <tr>
+        <th>书名</th>
+        <th>作者</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>普通单元格</td>
+        <td>普通单元格</td>
+    </tr>
+    <tr>
+        <td rowspan="2">跨2行的单元格</td>
+        <td>普通单元格</td>
+    </tr>
+    <tr>
+        <td>普通单元格</td>
+    </tr>
+    <tr>
+        <td colspan="2">跨2列的单元格</td>
+    </tr>
+    <tr>
+        <td>普通单元格</td>
+        <td>普通单元格</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="2" style="text-align:right">现总计：2本图书</td>
+    </tr>
+    </tfoot>
+</table>
+
+<script type="text/javascript">
+    // tFoot：返回该表格里的<tfoot.../>元素。
+    //　tHead：返回该表格里的所有<thead.../>元素。
+    var a = document.getElementById("tableId");
+    document.writeln(a.rows[0].cells[0].innerHTML);
+
+    // 　innerHTML：大部分HTML页面元素如<div.../>、<td.../>的呈现内容由该属性控制。
+    // 　value：表单控件如<input.../>、<textarea.../>的呈现内容由该属性控
+
+
+    // 动态添加表格内容
+    //   insertRow(index)：在index处插入一行。返回新创建的 HTMLTableRowElement。
+    // 　createCaption()：为该表格创建标题。返回新创建的 HTMLTableCaptionElement。如果该表格已有标题，则返回已有的标题对象。
+    //   createTFoot()：为该表格创建<tfoot.../>元素。返回新创建的 HTMLTableFootElement。如果该表格已有<tfoot.../>元素，则返回已有的<tfoot.../>元素。
+    //   createTHead()：为该表格创建<thead.../>元素。返回新创建的 HTMLTableHeadElement。如果该表格已有<thead.../>元素，则返回已有的<thead.../>元素。
+    //                  HTMLTableRowElement对象代表表格行，该对象包含如下方法用于插入 单元格。
+    // 　insertCell(long index)：在index处创建一个单元格，返回新创建的单 元格。
+    // 　deleteRow(long index)：删除表格中index索引处的行。删除表格行的指定单元格使用HTMLRowElement对象的如下方法。
+    // 　deleteCell(long index)：删除某行index索引处的单元格
+</script>
+
+</body>

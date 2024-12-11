@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读写cookie</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // Cookie的大小被限制为4KB。
+    // Cookie会包含在每个HTTP请求中向服务器发送，这样势必导致多次发送重复数据。
+    // Cookie在网络传输时并未加密（除非整个应用都使用SSL），因此可能存在一些安全隐患。
+    var setCookie = function (key, value) {
+        // 添加Cookier
+        var s = key + "=" + value + "; " + document.cookie;
+        document.cookie = s;
+    }
+
+    var getCookie = function (key) {
+        var cookies = document.cookie.split(" ");
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var splits = cookie.split("=");
+            if (splits[0] == key) {
+                return splits[1];
+            }
+        }
+        return null;
+    }
+    setCookie("user", "crazyit.org");
+    setCookie("hello", "crazyit.org");
+    alert(getCookie("user"));
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+/*position:把元素放在,static静态的，relative相对的，absolute绝对的，fixed或固定的位置中*/
+/*top：元素向上的偏移量，left：元素的向左偏移量，right，bottom*/
+/*z-index：元素的堆叠z轴坐标，z约大约往上*/
+#pos1 {
+    width: 100px;
+    height: 100px;
+    background-color: #00FF00;
+
+    /*下面是位置相关的属性*/
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 2;
+}
+
+#pos2 {
+    width: 100px;
+    height: 100px;
+    background-color: #003366;
+
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    z-index: 1;
+}

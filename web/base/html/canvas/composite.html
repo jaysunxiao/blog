@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 叠加风格 </title>
+</head>
+<body>
+<h2> 叠加风格 </h2>
+选择叠加风格：<select style="width:160px" onchange="draw(this.value);";>
+    <option value="source-over">source-over</option>
+    <option value="source-in">source-in</option>
+    <option value="source-out">source-out</option>
+    <option value="source-atop">source-atop</option>
+    <option value="destination-over">destination-over</option>
+    <option value="destination-in">destination-in</option>
+    <option value="destination-out">destination-out</option>
+    <option value="destination-atop">destination-atop</option>
+    <option value="lighter">lighter</option>
+    <option value="xor">xor</option>
+    <option value="copy">copy</option>
+</select><br/>
+<canvas id="mc" width="400" height="200"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	var draw = function(compositeOper)
+	{
+		// 保存当前的绘图状态
+		ctx.save();
+		// 获取canvas元素对应的DOM对象
+		ctx.clearRect(0 , 0 , 400 , 200);
+		// 设置填充颜色
+		ctx.fillStyle = '#f00';
+		// 填充一个矩形
+		ctx.fillRect(30 , 20 , 160 , 100);
+		// 设置图形叠加风格
+		ctx.globalCompositeOperation = compositeOper
+		// 设置填充颜色
+		ctx.fillStyle = '#0f0';
+		// 填充一个矩形
+		ctx.fillRect(120 , 60 , 160 , 100);
+		// 恢复之前保存的绘图状态
+		ctx.restore();
+	}
+	draw("source-over");
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>obj</title>
+</head>
+<body>
+<script>
+let obj = {foo: 'bar', baz: 42};
+let keys = Object.keys(obj);
+console.log("obj json" + JSON.stringify(obj));
+console.log("keys:" + JSON.stringify(keys));
+
+
+console.log('************************************************************************');
+// ["foo", "baz"]
+for (let value in keys) {
+    console.log(value);
+}
+
+
+// 下面两个方法在浏览器都不起作用
+let values = Object.values(obj);
+console.log('************************************************************************');
+// ["foo", "baz"]
+for (let value in values) {
+    console.log(value);
+}
+
+
+let entries = Object.entries(obj);
+console.log('************************************************************************');
+// ["foo", "baz"]
+for (let [k, v] in entries) {
+    console.log(k + '->' + v);
+}
+</script>
+</body>
+</html>

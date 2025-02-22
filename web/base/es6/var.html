@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var</title>
+</head>
+<body>
+<script>
+    // Number对象上，新提供了Number.isFinite()和Number.isNaN()两个方法。
+    // Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。
+    Number.isFinite(15); // true
+    Number.isFinite(0.8); // true
+    Number.isFinite(NaN); // false
+    Number.isFinite(Infinity); // false
+    Number.isFinite(-Infinity); // false
+    Number.isFinite('foo'); // false
+    Number.isFinite('15'); // false
+    Number.isFinite(true); // false
+
+
+    // ES6将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。
+    // ES5的写法
+    parseInt('12.34') // 12
+    parseFloat('123.45#') // 123.45
+
+    // ES6的写法
+    Number.parseInt('12.34') // 12
+    Number.parseFloat('123.45#') // 123.45
+
+    // Number.isInteger()用来判断一个数值是否为整数。
+    Number.isInteger(25) // true
+    Number.isInteger(25.1) // false
+
+    // JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。
+
+    Math.pow(2, 53) // 9007199254740992
+    Math.pow(2, 53) === Math.pow(2, 53) + 1
+    // 上面代码中，超出 2 的 53 次方之后，一个数就不精确了。
+
+    // ES6 引入了Number.MAX_SAFE_INTEGER和Number.MIN_SAFE_INTEGER这两个常量，用来表示这个范围的上下限。
+
+    Number.MAX_SAFE_INTEGER === Math.pow(2, 53) - 1 // true
+    Number.MAX_SAFE_INTEGER === 9007199254740991 // true
+
+    Number.MIN_SAFE_INTEGER === -Number.MAX_SAFE_INTEGER // true
+    Number.MIN_SAFE_INTEGER === -9007199254740991 // true
+
+    // Number.isSafeInteger()则是用来判断一个整数是否落在这个范围之内。
+    Number.isSafeInteger('a') // false
+</script>
+</body>
+</html>

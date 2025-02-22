@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 绘制圆角矩形 </title>
+</head>
+<body>
+<h2> arcTo示意 </h2>
+<canvas id="mc" width="400" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	/*
+		该方法负责绘制圆角矩形
+		x1、y1：是圆角矩形左上角的座标。
+		width、height：控制圆角举行的宽、高
+		radius：控制圆角矩形的四个圆角的半径
+	*/
+	function createRoundRect(context , x1 , y1 , width , height , radius)
+	{
+		// 移动到左上角
+		ctx.moveTo(x1 + radius , y1);
+		// 添加一条连接到右上角的线段
+		ctx.lineTo(x1 + width - radius, y1);
+		// 添加一段圆弧
+		ctx.arcTo(x1 + width , y1, x1 + width, y1 + radius, radius);
+		// 添加一条连接到右下角的线段
+		ctx.lineTo(x1 + width, y1 + height - radius);
+		// 添加一段圆弧
+		ctx.arcTo(x1 + width, y1 + height , x1 + width - radius
+			, y1 + height , radius);
+		// 添加一条连接到左下角的线段
+		ctx.lineTo(x1 + radius, y1 + height);
+		// 添加一段圆弧
+		ctx.arcTo(x1, y1 + height , x1 , y1 + height - radius , radius);
+		// 添加一条连接到左上角的线段
+		ctx.lineTo(x1 , y1 + radius);
+		// 添加一段圆弧
+		ctx.arcTo(x1 , y1 , x1 + radius , y1 , radius);
+		ctx.closePath();
+	}
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	ctx.lineWidth = 3;
+	createRoundRect(ctx , 30 , 30 , 200 , 100 , 20);
+	ctx.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<p>
+    <label for="email">邮箱：</label>
+    <input id="email" name="email" type="text" required pattern="\d{3}"/>
+    <br/>
+    <label id="email-label"></label>
+</p>
+
+<hr/>
+<script type="text/javascript">
+
+    var email = document.getElementById('email');
+    var emailLabel = document.getElementById('email-label');
+
+    email.oninput = function() {
+        var keyword = this.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'hello/ajax?keyword=' + 'world', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                emailLabel.innerText = xhr.responseText;
+            }
+        };
+        // 4. send操作发出请求
+        xhr.send();
+    };
+
+</script>
+</body>
+</body>
+</html>

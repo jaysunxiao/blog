@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 绘制圆形 </title>
+</head>
+<body>
+<h2> 绘制圆形 </h2>
+<canvas id="mc" width="400" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	for(var i = 0 ; i < 10 ; i++)
+	{
+		// 开始定义路径
+		ctx.beginPath();
+		// 添加一段圆弧
+		ctx.arc(i * 25 , i * 25 , (i + 1) * 8 , 0 , Math.PI * 2 , true);
+		// 关闭路径
+		ctx.closePath();
+		// 设置填充颜色
+		ctx.fillStyle = 'rgba(255 , 0 , 255 , ' + (10 - i) * 0.1 + ')';
+		// 填充当前路径。
+		ctx.fill();
+	}
+</script>
+</body>
+</html>

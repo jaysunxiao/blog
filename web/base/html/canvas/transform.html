@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 坐标变换 </title>
+</head>
+<body>
+<h2> 坐标变换 </h2>
+<canvas id="mc" width="420" height="320"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = "rgba(255, 0 , 0 , 0.3)";
+	// 图形绘制
+	ctx.translate(30 , 200);
+	for(var i = 0 ; i < 50 ; i++)
+	{
+		ctx.translate(50 , 50);
+		ctx.scale(0.93 , 0.93);
+		ctx.rotate(-Math.PI / 10);
+		ctx.fillRect(0 , 0 , 150 , 75);
+	}
+</script>
+</body>
+</html>
+>

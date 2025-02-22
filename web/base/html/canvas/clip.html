@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 位图裁剪 </title>
+</head>
+<body>
+<h2> 位图裁剪 </h2>
+<canvas id="mc" width="400" height="260"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	var dig = Math.PI / 20 ;
+	var count = 0;
+	var image = new Image();
+	image.src = "android.png";
+	image.onload = function()
+	{
+		// 指定每隔0.15秒调用一次addRadial函数
+		setInterval("addRadial();" , 150);
+	}
+	var addRadial = function()
+	{
+		// 保存当前的绘图状态
+		ctx.save();
+		// 开始创建路径
+		ctx.beginPath();
+		// 添加一段圆弧
+		ctx.arc(200 , 130 , 200 , 0 , dig * ++count , false);
+		// 让圆弧连接到圆心
+		ctx.lineTo(200 , 130);
+		// 关闭路径
+		ctx.closePath();
+		// 剪切路径
+		ctx.clip();
+		// 此时绘制的图片只有路径覆盖的部分才会显示出来
+		ctx.drawImage(image , 124  , 20);
+		ctx.restore();
+	}
+</script>
+</body>
+</html>

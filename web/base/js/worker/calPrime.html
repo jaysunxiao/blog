@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 计算质数 </title>
+</head>
+<body>
+
+<p>
+<p>已经发现的所有质数：</p>
+<div id="result"></div>
+</p>
+
+<script type="text/javascript">
+    var n = 1;
+    search:
+        while (n < 99999) {
+            // 开始搜寻下一个质数
+            n += 1;
+            for (var i = 2; i <= Math.sqrt(n); i++) {
+                // 如果除以n的余数为0，开始判断下一个数字。
+                if (n % i == 0) {
+                    continue search;
+                }
+            }
+            document.getElementById('result').innerHTML += (n + ", ");
+        }
+</script>
+</body>
+</html>

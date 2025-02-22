@@ -1,0 +1,21 @@
+/*响应式布局，移动优先原则，优先实现小屏幕*/
+
+/*screen: 用于电脑屏幕，平板电脑，智能手机等。默认值*/
+/*
+CSS 语法
+@media mediatype and|not|only (media feature) {
+    CSS-Code;
+}
+*/
+
+@media screen and (min-width: 481px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        background-color: green;
+    }
+}

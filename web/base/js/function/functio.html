@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+<script type="text/javascript">
+// JavaScript函数与Java方法有些相似。但实际上它们的差别很大，JavaScript是弱类型语言，归纳起来，主要存在如下4点区别:
+// 1.JavaScript函数无须声明返回值类型。
+// 2.JavaScript函数无须声明形参类型。
+// 3.JavaScript函数可以独立存在，无须属于任何类。
+// 4.JavaScript函数必须使用function关键字定义。
+
+// 定义命名函数
+function sum(a, b) {
+    return a + b;
+}
+
+document.writeln("命名函数:");
+document.writeln(sum(10, 10));
+document.writeln("<hr/>");
+
+
+// 定义匿名函数
+// 如果你是一个有经验的JavaScript开发者，或者阅读过大量优秀的JavaScript源代码（比如Prototype.js、jQuery等），
+// 将会在这些JavaScript源代码中看到它们基本都是采用这种方式来定义函数的。使用匿名函数的另一个
+// 好处是更加方便，当需要为类、对象定义方法时，使用匿名函数的语法能提供更好的可读性。
+var f = function (a, b) {
+    return a + b;
+};
+document.writeln("匿名函数:");
+document.writeln(f(10, 10) + "<br/>");
+document.writeln(typeof (f) + "<br/>");// function
+
+// 定义一个函数时，系统也会创建一个对象，该对象是Function类的实例
+document.writeln(f instanceof Function);// true
+document.writeln(f instanceof Object);// true
+document.writeln("<hr/>");
+
+// 方法：定义一个函数时，该函数通常都会附加给某个对象，作为该对象的方法。
+// 类：在定义函数的同时，也得到了一个与函数同名的类。
+function Person(name, age) {
+    // 被this关键字修饰的变量不再是局部变量，它是该函数的实例属性
+    this.name = name;
+    this.age = age;
+
+    // 性能低下：因为每次创建Person实例时，程序依次向下执行，每次执行程序中粗体字代码时都将
+    // 创建一个新的info函数——当创建多个Person对象时，系统就会有很多个info函数——这就会造成系统内存泄漏
+    this.info = function () {
+        document.writeln(this.name + "--" + this.age);
+        document.writeln("<br/>");
+    };
+
+    // static属性和static方法
+    Person.a = "static field";
+    Person.b = function () {
+        document.writeln("static method" + name + "<br/>");
+    };
+}
+
+// 实例化一个对象
+var person = new Person("jaysunxiao", 18);
+var person2 = new Person("jaysunxiao222", 222);
+person.info();
+person2.info();
+
+// 类属性和类方法
+document.writeln(Person.a);
+Person.b();
+
+if (person instanceof Person) {
+    document.writeln("hello person <br/>");
+}
+
+// JavaScript中的对象本质上是一个关联数组，或者说更像Java里的Map数据结构，由一组key-value对组成
+for (propName in person) {
+    document.writeln("person对象的[" + propName + ":{" + person[propName] + "}]<br/>");
+}
+
+// 尽量避免使用内嵌函数为类定义方法，而应该使用增加prototype属性的方式来增加方法。
+// 增加的实际上是对象的方法，只会创建一次
+Person.prototype.getName = function () {
+    return this.name;
+};
+document.writeln(person.getName() + "<br/>");
+
+document.writeln("<hr/>");
+
+// 异常处理
+document.writeln("异常处理:");
+try {
+    document.writeln(c);
+
+    throw "error";
+} catch (error) {
+    document.writeln(error);
+} finally {
+    document.writeln("finally");
+}
+
+</script>
+</body>
+</html>

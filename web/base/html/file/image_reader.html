@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传域</title>
+</head>
+<body>
+<form id="form1" name="form1" action="http://www.baidu.com" method="get" target="_blank">
+    <p>
+        <span>浏览图片：</span>
+        <input id="images" type="file" multiple="multiple" accept="image/*"/>
+    </p>
+    <p>
+        <input type="button" value="显示文件" onclick="showDetails();"/>
+    </p>
+</form>
+<script type="text/javascript">
+var showDetails = function()
+{
+	var imageEle = document.getElementById("images");
+	// 获取文件上传域内输入的多个文件
+	var fileList = imageEle.files;
+	// 遍历每个文件
+	for(var i = 0 ; i < fileList.length ; i ++)
+	{
+		var file = fileList[i];
+		div = document.createElement("div");
+		// 依次读取每个文件的文件名、文件类型、文件大小
+		div.innerHTML = "第" + (i + 1) + "个文件的文件名是：" + file.name
+			+ "，该文件类型是：" + file.type
+			+ "，该文件大小为：" + file.size;
+		// 把div元素添加到页面中。
+		document.body.appendChild(div);
+	}
+}
+</script>
+</body>
+</html>

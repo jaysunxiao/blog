@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    const a = 1;// int
+    const b = '1';// String
+
+    const c = 1.1;// float
+    const d = '1.1';// String
+
+    const e = true; //boolean
+
+    const f = [0, 1, 2, 3];// Array
+    const g = new Array(0, 1, 2, 3);// Array
+
+    // null==undefined将返回true。如果要精确区分null和undefined，应该考虑使用精确等于符（===）
+    let h;// undefined类型：专门用来确定一个已经创建但是没有初值的变量。
+    const i = null;// 用于表明某个变量的值为空，可以通过赋值为null的方式清除变量
+
+    // 1.任何数值除以非数值（字符串、undefined、object）都会返回NaN。
+    // 2.NaN与任何值都不相等，包括NaN自身。
+    // 使用isNaN()方法判断是否为NaN
+
+    // 自动类型转换虽然方便，但程序可读性非常差，而且有时候我们就是希望让字符串和数值执行加法运算，这就需要使用强制类型转换了。
+    // JavaScript提供了如下几个函数来执行强制类型转换:
+    // toString()：将布尔值、数值等转换成字符串。
+    // parseInt()：将字符串、布尔值等转换成整数。
+    // parseFloat()：将字符串、布尔值等转换成浮点数。
+
+    // 定义全局变量
+    var scope = '全局变量';
+
+    function test() {
+        // 因此全局变量被局部变量覆盖，而此时scope局部变量尚未赋值，故此处输出undefined，会从上下文搜索。
+        document.writeln(scope + '<br />');
+        // 定义scope的局部变量，其作用范围为整个函数内
+        var scope = '局部变量';
+        document.writeln(scope + '<br />');
+
+        // 定义变量用var和不用var实际上是存在差异的：
+        // 如果使用var定义变量，那么程序会强制定义一个新变量。
+        // 如果没有使用var定义变量，系统会优先在当前上下文中搜索是否存
+
+        // 全局变量，必须调用过test（）方法后才会变成全局变量
+        allScope = 100;
+    }
+
+    test();
+
+    // 改变HTML输出流，document.write("ddd")，这个方法绝对不要在文档加载完成之后使用，会覆盖该文档
+    document.writeln(typeof(a));// number
+    document.writeln(typeof(b));// string
+    document.writeln(typeof(c));
+    document.writeln(typeof(d));
+    document.writeln(typeof(e));
+    document.writeln(typeof(f));// object
+    document.writeln(typeof(g));// object
+    document.writeln(typeof(h));// undefined
+    document.writeln(typeof(i));
+
+    // 空指针检测，如果j为undefined，或数字零，或false，也会得到与null相同的结果，虽然null和二者不一样。
+    let j = null;
+    if (!j) {
+        console.log('null---->' + j);
+    }
+
+    // j为undefined时，也会得到与null相同的结果，虽然null和undefined不一样。
+    if (j == null) {
+        console.log('null---->' + j);
+    }
+</script>
+
+</body>
+</html>

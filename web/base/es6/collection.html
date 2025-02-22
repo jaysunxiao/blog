@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collection</title>
+</head>
+<body>
+<script>
+    const s1 = new Set();
+    const arr1 = [2, 3, 5, 4, 5, 2, 2];
+    arr1.forEach(x => s1.add(x));
+
+    let temp1 = '';
+    for (let i of s1) {
+        temp1 = temp1 + i + ' ';
+    }
+    // 2 3 5 4
+    console.log(temp1);
+
+    console.log('**********************************************************************');
+
+    // Set 结构的实例有四个遍历方法，可以用于遍历成员。
+    // keys()：返回键名的遍历器
+    // values()：返回键值的遍历器
+    // entries()：返回键值对的遍历器
+    // forEach()：使用回调函数遍历每个成员
+
+    let set = new Set(['red', 'green', 'blue']);
+
+    for (let item of set.keys()) {
+        console.log(item);
+    }
+    // red
+    // green
+    // blue
+
+    for (let item of set.values()) {
+        console.log(item);
+    }
+    // red
+    // green
+    // blue
+
+    for (let item of set.entries()) {
+        console.log(item);
+    }
+    // ["red", "red"]
+    // ["green", "green"]
+    // ["blue", "blue"]
+
+
+    console.log('**********************************************************************');
+
+    const m = new Map();
+
+    m.set('edition', 6) ;       // 键是字符串
+    m.set(262, 'standard');    // 键是数值
+    m.set(undefined, 'nah');    // 键是 undefined
+
+    console.log(m.size); // 3
+    console.log(m.get('edition')); // 6
+    console.log(m.get(undefined)); // 6
+    console.log(m.has('edition')); // true
+    m.delete(undefined);
+    console.log(m.has(undefined)); // false
+    m.clear(); // 清除所有成员，没有返回值
+
+    const map = new Map([
+        ['F', 'no'],
+        ['T',  'yes'],
+    ]);
+
+    for (let key of map.keys()) {
+        console.log(key);
+    }
+    // "F"
+    // "T"
+
+    for (let value of map.values()) {
+        console.log(value);
+    }
+    // "no"
+    // "yes"
+
+    for (let item of map.entries()) {
+        console.log(item[0], item[1]);
+    }
+    // "F" "no"
+    // "T" "yes"
+
+    // 或者
+    for (let [key, value] of map.entries()) {
+        console.log(key, value);
+    }
+    // "F" "no"
+    // "T" "yes"
+
+    // 等同于使用map.entries()
+    for (let [key, value] of map) {
+        console.log(key, value);
+    }
+    // "F" "no"
+    // "T" "yes"
+</script>
+</body>
+</html>

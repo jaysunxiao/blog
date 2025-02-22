@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+
+<div id="div1">
+    <button id="button1">dom 0 级事件处理程序</button>
+    <button id="button2">dom 2 级事件处理程序</button>
+    <button id="button3">事件的冒泡</button>
+</div>
+
+<script type="text/javascript">
+    // ****************************************************************************************
+    var button1 = document.getElementById("button1");
+    // 会被覆盖
+    button1.onclick = function () {
+        alert("dom 0 级事件处理程序");
+    }
+
+    // **********************************************************************************************
+    var button2 = document.getElementById("button2");
+    var f1 = function () {
+        alert("dom 2 级事件处理程序");
+    }
+    var f2 = function () {
+        alert("dom 2 级事件处理程序");
+    }
+    // 不会被覆盖
+    button2.addEventListener("click", f1);
+    button2.addEventListener("click", f2);
+
+
+    // **********************************************************************************************
+    var button3 = document.getElementById("button3");
+    var div1 = document.getElementById("div1");
+    var f3 = function (event) {
+        alert("事件的冒泡button3");
+        // 事件的类型
+        alert(event.type);
+        // 事件的目标
+        alert(event.target.innerHTML);
+        // 阻止事件的冒泡
+        event.stopPropagation();
+        // 阻止事件的默认行为，如阻止一个跳转的链接
+        // event.preventDefault();
+        // 事件重定向,target.dispatchEvent(Event event)：将event事件转发到target上。
+        // document.getElementById("button1").dispatchEvent(event);
+    }
+    var f4 = function (event) {
+        alert("事件的冒泡div1");
+    }
+    button3.addEventListener("click", f3);
+    div1.addEventListener("click", f4);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<!-- 不要在<html>和<head>之间插入任何内容！不要在</head>和<body>之间插入任何内容！不要在</body>和</html>之间插入任何内容！ -->
+
+
+<html lang="en">
+<head>
+    <meta name="author" content="sunsantity"/>
+    <meta name="website" content="www.baidu.com"/>
+    <meta name="copyright" content="www.kongnull.com"/>
+    <meta name="Keywords" content="metalmin"/>
+    <meta http-equiv="content-type" charset="UTF-8">
+    <title>This is title</title>
+    <link href="metal.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<h1>标题1</h1>
+<h2>标题2</h2>
+<h3>标题3</h3>
+<h4>标题4</h4>
+<h5>标题5</h5>
+<h6>标题6</h6>
+
+<!-- 输出一条水平线 horizontal line-->
+<hr/>
+
+<!-- 定义三节，不会换行 -->
+<span>节1</span>
+<span>节2</span>
+<span>节3</span>
+
+<br/>
+
+<!-- 定义三节，会换行，与<div>基本相似(italic /ɪ'tælɪk/n.斜体字) -->
+<!-- span元素只能包含文本、图像、超链接、文本格式化元素和表单控件元素等内容,
+p可以包含span,span不能包含p,div元素除了可以包含上面这些内容之外（包括p和span），
+还可以包含h1到h6、form、table、列表项元素和div元素——由此可见，div元素可以包含更多内容。 -->
+
+<div class="myclass"><b>节1</b></div>
+<div class="a"><i>节2</i></div>
+<div><b><i>节3</i></b></div>
+
+<!-- 定义三段，可以包含各种各样的内容 -->
+<p>段落1</p>
+<p>段落2</p>
+<p>段落3</p>
+
+<!-- pre元素包含的内容是“预格式化”文本。 -->
+<pre>
+	public class Cat
+	{
+		private int name;
+	}
+</pre>
+
+<hr/>
+
+<!-- 无序列表 -->
+<ul>
+    <li style="display: inline">列表1</li>
+    <li style="display: inline">列表2</li>
+    <li style="display: inline">列表3</li>
+</ul>
+<!-- 有序列表 -->
+<ol start="3" type="I" reversed="reversed">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ol>
+
+
+<hr/>
+
+<div id="hiden_text" hidden="true" style="height:80px">文字内容</div>
+<button onclick="var target=document.getElementById('hiden_text');
+	    target.hidden=!target.hidden;">显示/隐藏
+</button>
+
+<hr/>
+
+<!-- 指定执行拼写检查 -->
+<textarea spelllcheck="true" rows="3" cols="40"></textarea>
+
+<hr/>
+
+<article>
+    <header>
+        <h1>文章的标题</h1>
+        <div>作者：sun</div>
+    </header>
+    <p>
+        文章的段落
+    </p>
+    <!-- 帖子的“回复”部分，用section元素表示  -->
+    <section>
+        <!-- 每个article代表一个回复 -->
+        <article>
+            <header>
+                <h4>观点1</h4>
+                <div>作者：1</div>
+            </header>
+            <p>因此建议学习
+                <mark>Android</mark>
+                之前还是先学习Java
+            </p>
+            <p>
+                <time>2012-01-30</time>
+            </p>
+        </article>
+        <article>
+            <header>
+                <h4>观点2</h4>
+                <div>作者：2</div>
+            </header>
+            <p>学好Java再去学习Android事半功倍。</p>
+            <p>
+                <time datetime="2012-01-30T09:00">正月初八</time>
+            </p>
+        </article>
+    </section>
+    <!-- 帖子的“脚注” -->
+    <footer>
+        以上帖子和回复只代表其个人观点
+    </footer>
+    <aside>
+        <h3>关于楼主</h3>
+        <section>
+            <div>上次访问: 2012-1-3 20:02</div>
+        </section>
+    </aside>
+</article>
+
+<!-- 该aside放在body内部，将作为整个HTML文档的“边栏”信息 -->
+<aside>
+    <h3>页面导航</h3>
+    <nav>
+        <ul>
+            <li><a href="#">查看相关内容</a></li>
+            <li><a href="http://www.crazyit.org">返回首页</a></li>
+            <li><a href="http://www.crazyit.org/forum-63-1.html">返回本版</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<hr/>
+<!-- 在本窗口打开另一个资源horizontal reference  -->
+<a href="http://www.baidu.com"><b>百度首页</b></a>
+<br/>
+<!-- target：该属性的属性值可以是_self、_blank、_top、_parent四个值，分别代表使用自身、新窗口、顶层框架、父框架来装载新资源 -->
+<a href="http://www.baidu.com" target="_blank"><em>百度首页</em></a>
+
+<iframe src="metal.html" width="400" height="400"></iframe>
+
+</body>
+</html>

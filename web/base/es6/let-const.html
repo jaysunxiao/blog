@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let-const</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    // let所声明的变量，只在let命令所在的代码块内有效。
+    {
+        let a = 10;
+        var b = 1;
+    }
+
+    a // ReferenceError: a is not defined.
+    b // 1
+
+
+    // let和const必须先定义再使用，而var不需要
+    // var 的情况
+    console.log(foo); // 输出undefined
+    var foo = 2;
+
+    // let 的情况
+    console.log(bar); // 报错ReferenceError
+    let bar = 2;
+</script>
+</body>
+</body>
+</html>

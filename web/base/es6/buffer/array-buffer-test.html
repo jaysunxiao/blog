@@ -1,0 +1,138 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>websocket protocol test</title>
+</head>
+<body>
+<h1>websocket protocol test</h1>
+<script>
+
+const a = 999999;
+var result = (a << 1) ^ (a >> 31);
+console.log("a=" + result);
+
+const b = 9223372036854775807;
+console.log("b=" + b);
+
+const c = 300;
+var valueBuf = new ArrayBuffer(4);
+var valueView = new DataView(valueBuf, 0, valueBuf.byteLength);
+valueView.setUint32(0, c);
+console.log(valueView.getUint8(3));
+
+// js的number类型都是IEEE 754标准的64bit双精度浮点型所表示的。
+// 0~51位存储数值部分，52~62位存储指数部分，63位为符号位。因此对于整数来说，由于最大位数是52位
+// 所以可以表示的整数最大范围是2^53 - 1 = 9007199254740991，恰好为Number.MAX_SAFE_INTEGER的值
+console.log(Number.MAX_SAFE_INTEGER);
+
+const max = 0x7fffffff;
+const min = -(0x80000000);
+console.log(max);
+console.log(min);
+
+
+const headLength = 4;
+const protocolLength = 2;
+
+function connect() {
+    var ws = new WebSocket('ws://127.0.0.1:9000/test');
+    ws.binaryType = 'arraybuffer';
+    ws.onopen = function () {
+        hello();
+        console.log("onopen");
+    };
+
+    ws.onmessage = function (event) {
+        var data = event.data;
+        var dataView = new DataView(data, 0);
+
+        var length = dataView.getInt32(0);
+        console.log("length=" + length);
+
+        var protocolId = dataView.getInt16(headLength);
+        console.log("protocolId=" + protocolId);
+
+        var arrayPacket = new Uint8Array(data, headLength + protocolLength, length - protocolLength);
+        var decoder = new TextDecoder("utf-8");
+        var packetJsonStr = decoder.decode(arrayPacket);
+        console.log("packetJsonStr=" + packetJsonStr);
+
+        var packet = JSON.parse(packetJsonStr);
+        console.log(packet)
+    };
+
+    ws.onclose = function () {
+        console.log("close");
+    };
+
+
+    function hello() {
+        ws.send(writeVarint(1));
+    }
+
+
+    function mergeArrayBuffer(arrayBufA, arrayBufB) {
+        var u81 = new Uint8Array(arrayBufA),
+            u82 = new Uint8Array(arrayBufB),
+            res = new Uint8Array(arrayBufA.byteLength + arrayBufB.byteLength);
+        res.set(u81, 0);
+        res.set(u82, arrayBufA.byteLength);
+        return res.buffer;
+    }
+
+    function castToByte(value) {
+        var valueBuf = new ArrayBuffer(4);
+        var valueView = new DataView(valueBuf, 0, valueBuf.byteLength);
+        valueView.setUint32(0, value);
+        return valueView.getUint8(3);
+    }
+
+    function writeVarint(value) {
+        if (typeof (value) != "number") {
+            console.error("value is not number");
+            return null;
+        }
+        if (value > max || value < min) {
+            console.error("value not safe to convert to int, value:" + value);
+            return null;
+        }
+
+        var offset = 0;
+        var valueBuf = new ArrayBuffer(5);
+        var valueView = new DataView(valueBuf, 0, valueBuf.byteLength);
+
+        // encodeZigzagInt
+        value = (value << 1) ^ (value >> 31);
+
+        // ~0x7F是首位为1的byte
+        while (true) {
+            // 如果最高位是0,直接写
+            if ((value & ~0x7F) == 0) {
+                valueView.setUint8(offset, castToByte(value));
+                offset++;
+                break;
+            } else {
+                // 先写入低7位，最高位置1
+                valueView.setUint8(offset, castToByte((value & 0x7F) | 0x80));
+                // 再写高7位
+                value >>>= 7;
+                offset++;
+            }
+        }
+        var resultBuf = new ArrayBuffer(offset);
+        var resultView = new DataView(resultBuf, 0, resultBuf.byteLength);
+        for (var i = 0; i < offset; i++) {
+            resultView.setUint8(i, valueView.getUint8(i));
+        }
+        return resultBuf;
+
+    }
+
+}
+
+connect();
+</script>
+</body>
+</html>

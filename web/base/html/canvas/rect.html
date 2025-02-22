@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 绘制矩形 </title>
+</head>
+<body>
+<h2> 绘制矩形 </h2>
+<canvas id="mc" width="400" height="280"
+        style="border:1px solid black"></canvas>
+<script type="text/javascript">
+	// 获取canvas元素对应的DOM对象
+	var canvas = document.getElementById('mc');
+	// 获取在canvas上绘图的CanvasRenderingContext2D对象
+	var ctx = canvas.getContext('2d');
+	// 设置填充颜色
+	ctx.fillStyle = '#f00';
+	// 填充一个矩形
+	ctx.fillRect(30 , 20 , 120 , 60);
+	// 设置填充颜色
+	ctx.fillStyle = '#ff0';
+	// 填充一个矩形
+	ctx.fillRect(80 , 60 , 120 , 60);
+	// 设置线条颜色
+	ctx.strokeStyle = "#00f";
+	// 设置线条宽度
+	ctx.lineWidth = 10;
+	// 绘制一个矩形边框
+	ctx.strokeRect(30 , 130 , 120 , 60);
+	// 设置线条颜色
+	ctx.strokeStyle = "#0ff";
+	// 设置线条宽度
+	ctx.lineJoin = "round";
+	// 绘制一个矩形边框
+	ctx.strokeRect(80 , 160 , 120 , 60);
+	// 设置线条颜色
+	ctx.strokeStyle = "#f0f";
+	// 设置线条宽度
+	ctx.lineJoin = "bevel";
+	// 绘制一个矩形边框
+	ctx.strokeRect(130 , 190 , 120 , 60);
+
+</script>
+</body>
+</html>

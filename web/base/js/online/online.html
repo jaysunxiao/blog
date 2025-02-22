@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html manifest="online.manifest">
+<head>
+    <meta charset="UTF-8">
+    <title> 测试在线状态 </title>
+</head>
+<body>
+<script type="text/javascript">
+
+    // online/offline事件：如果开发者需要在网络状态发生变化时立刻得到通知，则可以通过HTML5提供的online/offline事件来检测。
+
+    // 为离线事件绑定事件监听器
+    window.addEventListener("offline", function () {
+        alert("您已经变成了离线状态，所有数据将会保存到本地！");
+    }, true);
+
+    window.addEventListener("online", function () {
+        alert("您已经变成了在线状态");
+    }, true);
+
+    // 判断浏览器的在线状态
+    if (navigator.onLine) {
+        alert("在线");
+    }
+    else {
+        alert("离线");
+    }
+</script>
+</body>
+</html>

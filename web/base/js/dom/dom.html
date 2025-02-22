@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+</head>
+<body>
+
+<p id="pId">p1</p>
+<p>p2</p>
+
+<script type="text/javascript">
+    // 寻找元素：
+
+    // 1.通过id
+    var p1 = document.getElementById("pId");
+    // 2.通过标签
+    var p2 = document.getElementsByTagName("p");//p1和p2指向同一个元素，这个方法返回第一个标签。
+    // 3.通过节点关系
+    var p3=p1.nextSibling;
+
+    // 改变HTML内容
+    p1.innerHTML = "hello world";
+    // 改变HTML属性
+    p1.style.color = "red";
+
+
+    // ***************************************************************************************************
+    var a = document.createElement("div");// document.createElement(Tag)：创建Tag标签对应的节点。
+    // Node cloneNode(boolean deep)：复制当前节点。当deep为true时，表示在复制当前节点的同时，
+    // 复制该节点的全部后代节点；当deep为false时，表示仅复制当前节点。
+    var b = document.getElementById("pId").cloneNode(true);
+
+
+    // ***************************************************************************************************
+    // 　appendChild(Node newNode)：将newNode添加成当前节点的最后一个子节点。
+    // 　insertBefore(Node newNode, Node refNode)：在refNode节点之前插入newNode节点。
+    // 　replaceChild(Node newChild, Node oldChild)：将oldChild节点替换成newChild节点
+    //   removeChild(oldNode)：删除oldNode子节点。
+</script>
+</body>
+</body>
+</html>

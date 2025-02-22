@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileReader</title>
+</head>
+<body>
+<p>
+    <label>请选择一个文件：</label>
+    <input type="file" id="file" />
+    <input type="button" value="读取图像" onclick="readAsDataURL()" />
+    <input type="button" value="读取二进制数据" onclick="readAsBinaryString()" />
+    <input type="button" value="读取文本文件" onclick="readAsText()" />
+</p>
+<div id="result" name="result"></div>
+
+
+<script type="text/javascript">
+
+// readAsText：该方法有两个参数，其中第二个参数是文本的编码方式，默认值为 UTF-8。这个方法非常容易理解，将文件以文本方式读取，读取的结果即是这个文本文件中的内容。
+// readAsBinaryString：该方法将文件读取为二进制字符串，通常我们将它传送到后端，后端可以通过这段字符串存储文件。
+// readAsDataURL：这是例子程序中用到的方法，该方法将文件读取为一段以 data: 开头的字符串，这段字符串的实质就是 Data URL，
+// Data URL是一种将小文件直接嵌入文档的方案。这里的小文件通常是指图像与 html 等格式的文件。（其中base64的方式就是由此来获得的。。）
+
+    var result=document.getElementById("result");
+    var file=document.getElementById("file");
+    //判断浏览器是否支持FileReader接口
+    if(typeof FileReader == 'undefined'){
+        result.InnerHTML="<p>你的浏览器不支持FileReader接口！</p>";
+        //使选择控件不可操作
+        file.setAttribute("disabled","disabled");
+    }
+
+    function readAsDataURL(){
+        //检验是否为图像文件
+        var file = document.getElementById("file").files[0];
+        if(!/image\/\w+/.test(file.type)){
+            alert("看清楚，这个需要图片！");
+            return false;
+        }
+        var reader = new FileReader();
+        //将文件以Data URL形式读入页面
+        reader.readAsDataURL(file);
+        reader.onload=function(e){
+            var result=document.getElementById("result");
+            //显示文件
+            result.innerHTML='<img src="' + this.result +'" alt="" />';
+        }
+    }
+
+    function readAsBinaryString(){
+        var file = document.getElementById("file").files[0];
+        var reader = new FileReader();
+        //将文件以二进制形式读入页面
+        reader.readAsBinaryString(file);
+        reader.onload=function(f){
+            var result=document.getElementById("result");
+            //显示文件
+            result.innerHTML=this.result;
+        }
+    }
+
+    function readAsText(){
+        var file = document.getElementById("file").files[0];
+        var reader = new FileReader();
+        //将文件以文本形式读入页面
+        reader.readAsText(file);
+        reader.onload=function(f){
+            var result=document.getElementById("result");
+            //显示文件
+            result.innerHTML=this.result;
+        }
+    }
+
+</script>
+
+</body>
+</html>

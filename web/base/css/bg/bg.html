@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景相关属性</title>
+    <style type="text/css">
+        /* 为div元素增加边框 */
+        div {
+            border: 1px solid #000;
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+</head>
+<!-- background-attachment是否在屏幕上固定 -->
+<body style="background-image:url(sky.gif);background-attachment:fixed">
+<hr/>
+<!-- 灰色背景 -->
+<div style="background-color:#aaa;">测试文字</div>
+<hr/>
+<!-- background-clip:border-box	背景被裁剪到边框盒。
+    padding-box	背景被裁剪到内边距框。
+    content-box	背景被裁剪到内容框。 -->
+<div style="background-image:url(wjc.gif);background-clip:content-box;">背景被裁剪到内容框</div>
+<hr/>
+
+<!-- 设置背景图像的起始位置 -->
+<div style="background-image:url(wjc.gif);background-position:50% 50%;">起始位置</div>
+<hr/>
+<!-- 是否重复 -->
+<div style="background-image:url(wjc.gif);background-repeat:no-repeat;background-position:center bottom;">是否重复</div>
+<hr/>
+</body>
+</html>

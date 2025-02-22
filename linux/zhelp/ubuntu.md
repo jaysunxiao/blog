@@ -114,6 +114,34 @@ git config --global http.proxy http://127.0.0.1:10809
 git config --global https.proxy https://127.0.0.1:10809
 ```
 
+### node安装
+
+- 到nodejs的官网查看最新版本的安装教程，网上的教程都非常的滞后，https://nodejs.org/
+
+```
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.14.0".
+nvm current # Should print "v22.14.0".
+
+# Verify npm version:
+npm -v # Should print "10.9.2".
+```
+
+- puppeteer 环境需要安装一些其它浏览器的依赖，需要什么依赖安装什么依赖
+```
+apt install libgbm-dev
+apt install libasound-dev
+```
+
 ### 显卡驱动安装
 
 - 最新安装方式，https://blog.csdn.net/Eric_xkk/article/details/131800365

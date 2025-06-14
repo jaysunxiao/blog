@@ -1,3 +1,39 @@
+### U盘启动器
+
+- 格式化U盘备用
+
+### 安装wepe
+
+- 下载wepe，然后启动安装到U盘，注意是安装到U盘，使用默认的安装方式
+
+![img.png](image/img00.png)
+
+### Windows镜像文件
+
+- 从爱纯净或者其它网站获取最新的镜像系统，或者从 next.itellyou.cn 下载
+- 将操作系统 iso 或者 gho 文件复制到U盘中
+- 至此U盘制作工具完成
+
+### 分区
+
+- 重启电脑，按住DEL进入BIOS界面，将U盘制作工具设置为启动盘
+- 重启电脑，进入PE操作系统
+- 使用分区工具，给已经有分区的硬盘，删除所有分区，并且重新分区硬盘
+
+![img.png](image/img01.png)
+![img.png](image/img02.png)
+
+- 转换分区表的类型，UEFI对应GUID即GPT分区，Legacy对应MBR分区
+
+![img.png](image/img03.png)
+
+- 快速分区，然后4k对齐，选择4096，确定保存
+
+![img.png](image/img04.png)
+
+- 如果是ISO文件操作系统，则直接安装
+- 如果是GHO 文件操作系统，则使用备份还原，然后装系统
+
 ### 激活
 
 - KMS

@@ -10,7 +10,7 @@
 
 ### Windows镜像文件
 
-- 从爱纯净或者其它网站获取最新的镜像系统，或者从 next.itellyou.cn 下载
+- 从 next.itellyou.cn 下载windows的 ISO 镜像文件，优先选择ISO文件
 - 将操作系统 iso 或者 gho 文件复制到U盘中
 - 至此U盘制作工具完成
 

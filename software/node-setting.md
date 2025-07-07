@@ -1,0 +1,2 @@
+- 官网下载Linux安装包，类似Java的安装方式
+- apt install xvfb  需要安装图形虚拟显示器程序 X virtual framebuffer，要不然某些爬虫无法运行

@@ -2,7 +2,7 @@
 
 ## Chinese
 
-### 01
+### 01 — 约 15 秒
 
 一段文字，能变成什么？
 
@@ -13,7 +13,7 @@
 
 现在，只需要从一句话开始。
 
-### 02
+### 02 — 约 20 秒
 
 这就是 HTML Text to Animation。
 
@@ -23,7 +23,7 @@
 
 可以是一段文案、一个概念、一次讲述，甚至，只是一个还没有被看见的想法。
 
-### 03
+### 03 — 约 23 秒
 
 在它背后，是六百种核心视觉风格。
 
@@ -36,7 +36,7 @@
 
 几乎每一种内容，都能找到属于自己的视觉世界。
 
-### 04
+### 04 — 约 20 秒
 
 但它不是在六百套模板中，随机选择一套。
 
@@ -49,7 +49,7 @@
 
 它寻找的，不是最炫目的效果，而是那个最准确、最有力量的表达。
 
-### 05
+### 05 — 约 22 秒
 
 随后，文字被拆解成节奏。
 
@@ -65,7 +65,7 @@
 
 动画，就是内容本身。
 
-### 06
+### 06 — 约 16 秒
 
 最终，这一切会被写进一个完整的 HTML 文件。
 
@@ -74,7 +74,7 @@
 
 HTML、CSS、SVG 与 Canvas，共同构成一支可以直接在浏览器中播放的动画作品。
 
-### 07
+### 07 — 约 14 秒
 
 六百种风格，不是六百种特效。
 
@@ -93,7 +93,7 @@ HTML Text to Animation。
 
 ## English
 
-### 01
+### 01 — About 15 seconds
 
 What can a piece of text become?
 
@@ -104,7 +104,7 @@ Even an entire world, unfolding before your eyes.
 
 And now, it all begins with a single sentence.
 
-### 02
+### 02 — About 20 seconds
 
 This is HTML Text to Animation.
 
@@ -115,7 +115,7 @@ You don’t need a finished design.
 
 Start with a piece of copy, a concept, a story—or simply an idea that has yet to be seen.
 
-### 03
+### 03 — About 23 seconds
 
 Behind it are six hundred core visual styles.
 
@@ -128,7 +128,7 @@ From a single character coming alive to the birth of a complete system.
 
 Nearly every kind of content can find a visual world of its own.
 
-### 04
+### 04 — About 20 seconds
 
 But this isn’t about randomly choosing from six hundred templates.
 
@@ -143,7 +143,7 @@ It doesn’t search for the flashiest effect.
 
 It searches for the clearest, most powerful expression.
 
-### 05
+### 05 — About 22 seconds
 
 Then, language becomes rhythm.
 
@@ -159,7 +159,7 @@ Here, animation is no longer decoration.
 
 Animation is the content itself.
 
-### 06
+### 06 — About 16 seconds
 
 In the end, everything is written into one complete HTML file.
 
@@ -168,7 +168,7 @@ No massive production pipeline.
 
 HTML, CSS, SVG, and Canvas come together to create an animated experience that plays directly in the browser.
 
-### 07
+### 07 — About 14 seconds
 
 Six hundred styles do not mean six hundred effects.
 
